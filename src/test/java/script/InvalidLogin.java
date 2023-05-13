@@ -12,9 +12,12 @@ public class InvalidLogin extends BaseTest
  @Test(priority = 2)
  public void testInvalidLogin() throws InterruptedException
  {
+	 int rc=Excel.getRowCount(XL_PATH, "InvalidLogin");
 	 
-	 String un = Excel.getData(XL_PATH, "InvalidLogin", 1, 0);
-	 String pw = Excel.getData(XL_PATH, "InvalidLogin", 1, 1);
+	 for(int i=1; i<=rc; i++)
+	 {
+	 String un = Excel.getData(XL_PATH, "InvalidLogin", i, 0);
+	 String pw = Excel.getData(XL_PATH, "InvalidLogin", i, 1);
 	 
 	 //1.enter invalid un
 	 LoginPage loginPage = new LoginPage(driver);
@@ -32,5 +35,6 @@ public class InvalidLogin extends BaseTest
 	 //4. err msg should be displayed
 	boolean result = loginPage.verifyErrMsgIsDisplayed(wait);
 	Assert.assertTrue(result);
+	 }
  }
 }
