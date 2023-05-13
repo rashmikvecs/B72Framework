@@ -24,5 +24,21 @@ public static String getData(String path,String sheet,int r,int c)
 	return value;
 	}
 
+public static int getRowCount(String path,String sheet)
+{
+	int rc=0;
+	try
+	{
+			Workbook wb = WorkbookFactory.create(new FileInputStream(path));
+			rc=wb.getSheet(sheet).getLastRowNum();
+	}
+	catch (Exception e) 
+	{
+		e.printStackTrace();
+	}
+	
+	return rc;
+	}
+
 
 }
