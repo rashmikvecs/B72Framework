@@ -15,10 +15,10 @@ public class LoginPage {
 	@FindBy(name="pwd")
 	private WebElement pwTB;
 	
-	@FindBy(xpath= "//div[text()='Login ']")
+	@FindBy(xpath="//div[text()='Login ']")
 	private WebElement loginBTN;
 	
-	@FindBy(xpath= "//span[contains(text(),'invalid']")
+	@FindBy(xpath="//span[contains(text(),'invalid')]")
 	private WebElement errMsg;
 	
 	public LoginPage(WebDriver driver)
