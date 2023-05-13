@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import generic.BaseTest;
 import generic.Excel;
-import page.GooglePage;
+//import page.GooglePage;
 
 public class DemoTest extends BaseTest {
 	
@@ -20,11 +20,9 @@ public class DemoTest extends BaseTest {
 		Reporter.log("test data:" +data, true);
 		Reporter.log(driver.getTitle(), true);
 		
-		GooglePage g = new GooglePage(driver);
-		g.setSearch(data);
-		Thread.sleep(3000);
-		
-		
+//		GooglePage g = new GooglePage(driver);
+//		g.setSearch(data);
+//		Thread.sleep(3000);		
 	}
 
 }
