@@ -9,6 +9,12 @@ public class LoginPage {
 	@FindBy(id="username")
 	private WebElement unTB;
 	
+	@FindBy(name="pwd")
+	private WebElement pwTB;
+	
+	@FindBy(xpath= "//div[text()='Login ']")
+	private WebElement loginBTN;
+	
 	public LoginPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, this);
@@ -19,5 +25,14 @@ public class LoginPage {
 		unTB.sendKeys(un);
 	}
 	
+	public void setPassword(String pw)
+	{
+		pwTB.sendKeys(pw);
 
+	}
+
+	public void clickLoginButton()
+	{
+		loginBTN.click();
+	}
 }
